@@ -15,6 +15,8 @@
 		8A023E48210A04480036A2ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A023E47210A04480036A2ED /* GoogleService-Info.plist */; };
 		8A023E4A210A10540036A2ED /* AddThoughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A023E49210A10540036A2ED /* AddThoughtVC.swift */; };
 		8A023E50210A161C0036A2ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A023E4F210A161C0036A2ED /* Constants.swift */; };
+		8A3BD1C0210A557F00E33685 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3BD1BF210A557F00E33685 /* Thought.swift */; };
+		8A3BD1C2210A567500E33685 /* ThoughtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3BD1C1210A567500E33685 /* ThoughtCell.swift */; };
 		DBF0170A16C1E4B171D45824 /* Pods_RNDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA730782D4BBDB825BAEA9E8 /* Pods_RNDM.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		8A023E47210A04480036A2ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A023E49210A10540036A2ED /* AddThoughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtVC.swift; sourceTree = "<group>"; };
 		8A023E4F210A161C0036A2ED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A3BD1BF210A557F00E33685 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
+		8A3BD1C1210A567500E33685 /* ThoughtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCell.swift; sourceTree = "<group>"; };
 		AA730782D4BBDB825BAEA9E8 /* Pods_RNDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C856A0CE11B52662D0E2F013 /* Pods-RNDM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNDM/Pods-RNDM.release.xcconfig"; sourceTree = "<group>"; };
 		DD2D25F8E8819A1682987F07 /* Pods-RNDM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNDM/Pods-RNDM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			children = (
 				8A023E39210A038B0036A2ED /* Main.storyboard */,
 				8A023E3E210A038C0036A2ED /* LaunchScreen.storyboard */,
+				8A3BD1C1210A567500E33685 /* ThoughtCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 		8A023E4D210A105F0036A2ED /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8A3BD1BF210A557F00E33685 /* Thought.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A023E4A210A10540036A2ED /* AddThoughtVC.swift in Sources */,
+				8A3BD1C0210A557F00E33685 /* Thought.swift in Sources */,
 				8A023E38210A038B0036A2ED /* MainVC.swift in Sources */,
+				8A3BD1C2210A567500E33685 /* ThoughtCell.swift in Sources */,
 				8A023E36210A038B0036A2ED /* AppDelegate.swift in Sources */,
 				8A023E50210A161C0036A2ED /* Constants.swift in Sources */,
 			);

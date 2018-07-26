@@ -11,10 +11,10 @@ import Firebase
 
 class AddThoughtVC: UIViewController {
     
-    @IBOutlet weak var categorySegment: UISegmentedControl!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var thoughtTextView: UITextView!
-    @IBOutlet weak var postButton: UIButton!
+    @IBOutlet private weak var categorySegment: UISegmentedControl!
+    @IBOutlet private weak var usernameTextField: UITextField!
+    @IBOutlet private weak var thoughtTextView: UITextView!
+    @IBOutlet private weak var postButton: UIButton!
     
     private var selectedCategory = ThoughtCategory.funny.rawValue
     
@@ -29,6 +29,7 @@ class AddThoughtVC: UIViewController {
     
     @IBAction func postButtonTapped(_ sender: Any) {
         guard let username = usernameTextField.text else { return }
+    
         
         Firestore.firestore().collection(THOUGHTS_REF).addDocument(data: [
             CATEGORY: selectedCategory,
