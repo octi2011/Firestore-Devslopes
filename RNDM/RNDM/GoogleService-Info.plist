@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>737674007570-a4hlt7ipdh1ml4ce040ttr5khdt6o49c.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.737674007570-a4hlt7ipdh1ml4ce040ttr5khdt6o49c</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAvqX0hewPRuvx7VgR_CRMyp0Nj7EY7t1I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>737674007570</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.octavian.RNDM</string>
+	<key>PROJECT_ID</key>
+	<string>rndm-c80eb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rndm-c80eb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:737674007570:ios:afefae02179d17da</string>
+	<key>DATABASE_URL</key>
+	<string>https://rndm-c80eb.firebaseio.com</string>
+</dict>
+</plist>
