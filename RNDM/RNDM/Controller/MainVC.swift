@@ -93,7 +93,7 @@ class MainVC: UIViewController {
             }
             
         } else {
-        
+            
             thoughtsListener = thoughtsCollectionRef
                 .whereField(CATEGORY, isEqualTo: selectedCategory)
                 .order(by: TIMESTAMP, descending: true)
@@ -159,7 +159,7 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "thoughtCell", for: indexPath) as? ThoughtCell {
-            cell.configureCell(thought: thoughts[indexPath.row])
+            cell.configureCell(thought: thoughts[indexPath.row], delegate: self)
             return cell
         } else {
             return UITableViewCell()
@@ -168,6 +168,65 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toComments", sender: thoughts[indexPath.row])
+    }
+}
+
+extension MainVC: ThoughtDelegate {
+    func thoughtOptionsTapped(thought: Thought) {
+        let alert = UIAlertController(title: "Delete", message: "Do you want to delete your thought?", preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "Delete Thought", style: .default) { [weak self] (action) in
+            guard let weakSelf = self else { return }
+            
+            weakSelf.delete(collection: Firestore.firestore().collection(THOUGHTS_REF)
+                .document(thought.documentId)
+                .collection(COMMENTS_REF), completion: { (error) in
+                    if let error = error {
+                        debugPrint("Could not delete subcollection: \(error.localizedDescription)")
+                    } else {
+                        Firestore.firestore().collection(THOUGHTS_REF).document(thought.documentId)
+                            .delete(completion: { (error) in
+                                if let error = error {
+                                    debugPrint("Could not delete thought: \(error.localizedDescription)")
+                                } else {
+                                    alert.dismiss(animated: true, completion: nil)
+                                }
+                            })
+                    }
+            })
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            
+        }
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func delete(collection: CollectionReference, batchSize: Int = 100, completion: @escaping (Error?) -> ()) {
+        collection.limit(to: batchSize).getDocuments { [weak self] (docset, error) in
+            guard let _ = self else { completion(nil); return }
+            guard let docset = docset else {
+                completion(error)
+                return
+            }
+            
+            guard docset.count > 0 else {
+                completion(nil)
+                return
+            }
+            
+            let batch = collection.firestore.batch()
+            docset.documents.forEach { batch.deleteDocument($0.reference) }
+            
+            batch.commit { [weak self] (batchError) in
+                guard let weakSelf = self else { completion(nil); return }
+                if let batchError = batchError {
+                    completion(batchError)
+                } else {
+                    weakSelf.delete(collection: collection, batchSize: batchSize, completion: completion)
+                }
+            }
+        }
     }
 }
 

@@ -23,6 +23,7 @@
 		8A8B7D4C210A78B7000AF418 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B7D4B210A78B7000AF418 /* CommentCell.swift */; };
 		8A8B7D4E210A798E000AF418 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B7D4D210A798E000AF418 /* Comment.swift */; };
 		8AC52B51210AF6050069210A /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC52B50210AF6050069210A /* KeyboardBoundView.swift */; };
+		8AC52B53210B051A0069210A /* UpdateCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC52B52210B051A0069210A /* UpdateCommentVC.swift */; };
 		DBF0170A16C1E4B171D45824 /* Pods_RNDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA730782D4BBDB825BAEA9E8 /* Pods_RNDM.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		8A8B7D4B210A78B7000AF418 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		8A8B7D4D210A798E000AF418 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		8AC52B50210AF6050069210A /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		8AC52B52210B051A0069210A /* UpdateCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommentVC.swift; sourceTree = "<group>"; };
 		AA730782D4BBDB825BAEA9E8 /* Pods_RNDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C856A0CE11B52662D0E2F013 /* Pods-RNDM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNDM/Pods-RNDM.release.xcconfig"; sourceTree = "<group>"; };
 		DD2D25F8E8819A1682987F07 /* Pods-RNDM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNDM/Pods-RNDM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				8A8B7D45210A6BA9000AF418 /* LoginVC.swift */,
 				8A8B7D47210A6D2D000AF418 /* CreateUserVC.swift */,
 				8A8B7D49210A754C000AF418 /* CommentsVC.swift */,
+				8AC52B52210B051A0069210A /* UpdateCommentVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				8A8B7D48210A6D2D000AF418 /* CreateUserVC.swift in Sources */,
 				8AC52B51210AF6050069210A /* KeyboardBoundView.swift in Sources */,
 				8A3BD1C0210A557F00E33685 /* Thought.swift in Sources */,
+				8AC52B53210B051A0069210A /* UpdateCommentVC.swift in Sources */,
 				8A8B7D46210A6BA9000AF418 /* LoginVC.swift in Sources */,
 				8A023E38210A038B0036A2ED /* MainVC.swift in Sources */,
 				8A8B7D4C210A78B7000AF418 /* CommentCell.swift in Sources */,

@@ -8,11 +8,11 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class AddThoughtVC: UIViewController {
     
     @IBOutlet private weak var categorySegment: UISegmentedControl!
-    @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var thoughtTextView: UITextView!
     @IBOutlet private weak var postButton: UIButton!
     
@@ -28,16 +28,16 @@ class AddThoughtVC: UIViewController {
     }
     
     @IBAction func postButtonTapped(_ sender: Any) {
-        guard let username = usernameTextField.text else { return }
+        guard let username = Auth.auth().currentUser?.displayName else { return }
     
-        
         Firestore.firestore().collection(THOUGHTS_REF).addDocument(data: [
             CATEGORY: selectedCategory,
             NUM_COMMENTS: 0,
             NUM_LIKES: 0,
             THOUGHT_TEXT: thoughtTextView.text,
             TIMESTAMP: FieldValue.serverTimestamp(),
-            USERNAME: username
+            USERNAME: username,
+            USER_ID: Auth.auth().currentUser?.uid ?? ""
         ]) { (error) in
             if let error = error {
                 debugPrint("Error adding document: \(error)")
