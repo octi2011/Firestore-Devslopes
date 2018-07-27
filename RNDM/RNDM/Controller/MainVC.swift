@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 enum ThoughtCategory: String {
     case serious = "serious"
@@ -25,6 +26,7 @@ class MainVC: UIViewController {
     private var thoughtsCollectionRef: CollectionReference!
     private var thoughtsListener: ListenerRegistration!
     private var selectedCategory = ThoughtCategory.funny.rawValue
+    private var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,16 @@ class MainVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        setListener()
+        handle = Auth.auth().addStateDidChangeListener({ [weak self] (auth, user) in
+            guard let weakSelf = self else { return }
+            if user == nil {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
+                weakSelf.present(loginVC, animated: true, completion: nil)
+            } else {
+                weakSelf.setListener()
+            }
+        })
         
         // one time only
 //        thoughtsCollectionRef.getDocuments { [weak self] (snapshot, error) in
@@ -100,7 +111,9 @@ class MainVC: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        thoughtsListener.remove()
+        if thoughtsListener != nil {
+            thoughtsListener.remove()
+        }
     }
     
     @IBAction func categoryChanged(_ sender: Any) {
@@ -118,6 +131,25 @@ class MainVC: UIViewController {
         thoughtsListener.remove()
         setListener()
     }
+    
+    @IBAction func onLogoutTapped(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signoutError as NSError {
+            debugPrint("Error signing out: \(signoutError)")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toComments" {
+            if let destinationVC = segue.destination as? CommentsVC {
+                if let thought = sender as? Thought {
+                    destinationVC.thought = thought
+                }
+            }
+        }
+    }
 }
 
 extension MainVC: UITableViewDataSource, UITableViewDelegate {
@@ -132,6 +164,10 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toComments", sender: thoughts[indexPath.row])
     }
 }
 

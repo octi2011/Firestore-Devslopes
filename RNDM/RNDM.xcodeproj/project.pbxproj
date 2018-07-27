@@ -17,6 +17,12 @@
 		8A023E50210A161C0036A2ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A023E4F210A161C0036A2ED /* Constants.swift */; };
 		8A3BD1C0210A557F00E33685 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3BD1BF210A557F00E33685 /* Thought.swift */; };
 		8A3BD1C2210A567500E33685 /* ThoughtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3BD1C1210A567500E33685 /* ThoughtCell.swift */; };
+		8A8B7D46210A6BA9000AF418 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B7D45210A6BA9000AF418 /* LoginVC.swift */; };
+		8A8B7D48210A6D2D000AF418 /* CreateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B7D47210A6D2D000AF418 /* CreateUserVC.swift */; };
+		8A8B7D4A210A754C000AF418 /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B7D49210A754C000AF418 /* CommentsVC.swift */; };
+		8A8B7D4C210A78B7000AF418 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B7D4B210A78B7000AF418 /* CommentCell.swift */; };
+		8A8B7D4E210A798E000AF418 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B7D4D210A798E000AF418 /* Comment.swift */; };
+		8AC52B51210AF6050069210A /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC52B50210AF6050069210A /* KeyboardBoundView.swift */; };
 		DBF0170A16C1E4B171D45824 /* Pods_RNDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA730782D4BBDB825BAEA9E8 /* Pods_RNDM.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +39,12 @@
 		8A023E4F210A161C0036A2ED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A3BD1BF210A557F00E33685 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 		8A3BD1C1210A567500E33685 /* ThoughtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCell.swift; sourceTree = "<group>"; };
+		8A8B7D45210A6BA9000AF418 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		8A8B7D47210A6D2D000AF418 /* CreateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserVC.swift; sourceTree = "<group>"; };
+		8A8B7D49210A754C000AF418 /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
+		8A8B7D4B210A78B7000AF418 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		8A8B7D4D210A798E000AF418 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		8AC52B50210AF6050069210A /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		AA730782D4BBDB825BAEA9E8 /* Pods_RNDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C856A0CE11B52662D0E2F013 /* Pods-RNDM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNDM/Pods-RNDM.release.xcconfig"; sourceTree = "<group>"; };
 		DD2D25F8E8819A1682987F07 /* Pods-RNDM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNDM/Pods-RNDM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +108,9 @@
 			children = (
 				8A023E37210A038B0036A2ED /* MainVC.swift */,
 				8A023E49210A10540036A2ED /* AddThoughtVC.swift */,
+				8A8B7D45210A6BA9000AF418 /* LoginVC.swift */,
+				8A8B7D47210A6D2D000AF418 /* CreateUserVC.swift */,
+				8A8B7D49210A754C000AF418 /* CommentsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -106,6 +121,7 @@
 				8A023E39210A038B0036A2ED /* Main.storyboard */,
 				8A023E3E210A038C0036A2ED /* LaunchScreen.storyboard */,
 				8A3BD1C1210A567500E33685 /* ThoughtCell.swift */,
+				8A8B7D4B210A78B7000AF418 /* CommentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8A3BD1BF210A557F00E33685 /* Thought.swift */,
+				8A8B7D4D210A798E000AF418 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8A023E4F210A161C0036A2ED /* Constants.swift */,
+				8AC52B50210AF6050069210A /* KeyboardBoundView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -213,6 +231,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RNDM/Pods-RNDM-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -225,6 +244,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -265,11 +285,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A023E4A210A10540036A2ED /* AddThoughtVC.swift in Sources */,
+				8A8B7D48210A6D2D000AF418 /* CreateUserVC.swift in Sources */,
+				8AC52B51210AF6050069210A /* KeyboardBoundView.swift in Sources */,
 				8A3BD1C0210A557F00E33685 /* Thought.swift in Sources */,
+				8A8B7D46210A6BA9000AF418 /* LoginVC.swift in Sources */,
 				8A023E38210A038B0036A2ED /* MainVC.swift in Sources */,
+				8A8B7D4C210A78B7000AF418 /* CommentCell.swift in Sources */,
 				8A3BD1C2210A567500E33685 /* ThoughtCell.swift in Sources */,
 				8A023E36210A038B0036A2ED /* AppDelegate.swift in Sources */,
 				8A023E50210A161C0036A2ED /* Constants.swift in Sources */,
+				8A8B7D4E210A798E000AF418 /* Comment.swift in Sources */,
+				8A8B7D4A210A754C000AF418 /* CommentsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
